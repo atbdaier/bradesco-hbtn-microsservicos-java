@@ -2,17 +2,19 @@ package com.example.demo;
 
 public class Song {
     private Integer id;
-    private String title;
-    private String artist;
-    private Integer year;
+    private String nome;
+    private String artista;
+    private String album;
+    private String anoLancamento;
 
     public Song() {}
 
-    public Song(Integer id, String title, String artist, Integer year) {
+    public Song(Integer id, String nome, String artista, String album, String anoLancamento) {
         this.id = id;
-        this.title = title;
-        this.artist = artist;
-        this.year = year;
+        this.nome = nome;
+        this.artista = artista;
+        this.album = album;
+        this.anoLancamento = anoLancamento;
     }
 
     public Integer getId() {
@@ -23,38 +25,46 @@ public class Song {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getNome() {
+        return nome;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public String getArtist() {
-        return artist;
+    public String getArtista() {
+        return artista;
     }
 
-    public void setArtist(String artist) {
-        this.artist = artist;
+    public void setArtista(String artista) {
+        this.artista = artista;
     }
 
-    public Integer getYear() {
-        return year;
+    public String getAlbum() {
+        return album;
     }
 
-    public void setYear(Integer year) {
-        this.year = year;
+    public void setAlbum(String album) {
+        this.album = album;
+    }
+
+    public String getAnoLancamento() {
+        return anoLancamento;
+    }
+
+    public void setAnoLancamento(String anoLancamento) {
+        this.anoLancamento = anoLancamento;
     }
 
     @Override
     public String toString() {
         return "Song{" +
                 "id=" + id +
-                ", title='" + title + '\'' +
-                ", artist='" + artist + '\'' +
-                ", year=" + year +
+                ", nome='" + nome + '\'' +
+                ", artista='" + artista + '\'' +
+                ", album='" + album + '\'' +
+                ", anoLancamento='" + anoLancamento + '\'' +
                 '}';
     }
 }
-
