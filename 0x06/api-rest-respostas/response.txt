@@ -1,0 +1,6 @@
+You have entered valid ID
+{"status":400,"message":"Você informou um CPF 0 inválido."}
+{"status":400,"message":"Você informou um CPF 0 inválido."}
+{"status":400,"message":"Você informou um CPF 1234567899876543 inválido."}
+You have entered valid CPF
+You have entered valid USERNAME
