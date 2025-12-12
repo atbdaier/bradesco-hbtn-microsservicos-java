@@ -16,7 +16,7 @@ public class UserController {
     public String findUserById(@PathVariable int id) {
         String msg = "";
         if (id > 0 && id < 100) {
-            msg = "Entre um id válido";
+            msg = "You have entered valid ID";
         } else {
             throw new UserIdException(String.valueOf(id));
         }
@@ -27,7 +27,7 @@ public class UserController {
     public String findUserByName(@PathVariable String userName) {
         String msg = "";
         if (userName != null && userName.length() > 3 && userName.length() < 15) {
-            msg = "Você informou um usuário válido";
+            msg = "You have entered valid USERNAME";
         } else {
             throw new UserNameException(userName);
         }
@@ -38,7 +38,7 @@ public class UserController {
     public String findUserByCPF(@PathVariable String cpf) {
         String msg = "";
         if (isCPF(cpf)) {
-            msg = "Vcê informou um CPF válido";
+            msg = "You have entered valid CPF";
         } else {
             throw new CPFException(cpf);
         }
