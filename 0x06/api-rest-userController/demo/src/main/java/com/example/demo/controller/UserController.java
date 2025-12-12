@@ -1,0 +1,55 @@
+package com.example.demo.controller;
+
+import com.example.demo.exception.CPFException;
+import com.example.demo.exception.UserIdException;
+import com.example.demo.exception.UserNameException;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping(value = "/users")
+public class UserController {
+
+    @GetMapping("/user-id/{id}")
+    public String findUserById(@PathVariable int id) {
+        String msg = "";
+        if (id > 0 && id < 100) {
+            msg = "Entre um id válido";
+        } else {
+            throw new UserIdException(String.valueOf(id));
+        }
+        return msg;
+    }
+
+    @GetMapping("/user-name/{userName}")
+    public String findUserByName(@PathVariable String userName) {
+        String msg = "";
+        if (userName != null && userName.length() > 3 && userName.length() < 15) {
+            msg = "Você informou um usuário válido";
+        } else {
+            throw new UserNameException(userName);
+        }
+        return msg;
+    }
+
+    @GetMapping("/user-cpf/{cpf}")
+    public String findUserByCPF(@PathVariable String cpf) {
+        String msg = "";
+        if (isCPF(cpf)) {
+            msg = "Vcê informou um CPF válido";
+        } else {
+            throw new CPFException(cpf);
+        }
+        return msg;
+    }
+
+    public boolean isCPF(String CPF) {
+        if (CPF == null) {
+            return false;
+        }
+        int length = CPF.length();
+        return length > 3 && length < 15;
+    }
+}
